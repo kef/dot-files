@@ -1,0 +1,26 @@
+alias h="history"
+alias pod="cd $HOME/Music/iTunes/iTunes\ Music/Podcasts"
+alias edoc="cd $SOURCE_DIR/suncorp/easydoc"
+alias eimg="cd $SOURCE_DIR/suncorp/easyimage"
+alias dn="cd $DOCS_DIR/dev/notes"
+alias ep="$EDITOR ~/.profile"
+alias fix_mysql="sudo ln -s /var/run/mysql5/mysqld.sock /tmp/mysql.sock"
+alias netstat_osx="sudo lsof -i -P"
+alias ss="ruby script/server"
+alias sc="ruby script/console"
+alias l='/bin/ls -sF'
+alias ls='l'
+alias la='l -a'
+alias ll='l -l'
+alias less="less -R"
+alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
+alias my_server="screen -R -d -m -S my_server ssh my_user@my.server"
+alias m="mate"
+alias vi="mate"
+alias log='tail -f -0 ./log/*.log'
+alias t='tail -f -0 ./log/*.log'
+alias p="cd $CURRENT_PROJECT_DIR"
+alias 1.9="rvm use 1.9"
+alias 1.8="rvm use default"
+alias u="cd .."
+alias noderb="rlwrap node-repl"
