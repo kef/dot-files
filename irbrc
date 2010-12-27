@@ -1,20 +1,13 @@
-require "irb/completion"
-require 'irb/ext/save-history'
 require 'pp'
 
-# TODO This might be redundant now that RUBYOPT="rubygems".
 require 'rubygems'
-
 require 'hirb'
-require "wirble"
-
-ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
-IRB.conf[:SAVE_HISTORY] = 10000
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
+require 'wirble'
 
 Wirble.init
 Wirble.colorize
 Hirb::View.enable
+
 if rails_env = ENV['RAILS_ENV']
   rails_root = File.basename(Dir.pwd)
   IRB.conf[:PROMPT] ||= {}
