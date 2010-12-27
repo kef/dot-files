@@ -86,8 +86,6 @@ function railsapp {
   rails $appname -m http://github.com/kef/rails-templates/raw/master/$template.rb $@
 }
 
-export RUBYOPT="rubygems"
-
 #export GEMDIR=`gem env gemdir`
 #
 # gemdoc() {
@@ -102,5 +100,5 @@ export RUBYOPT="rubygems"
 # TODO This is taking too long.
 #complete -o default -o nospace -F _gemdocomplete gemdoc
 
-# rvm-install added line:
-if [[ -s /Users/kef/.rvm/scripts/rvm ]] ; then source /Users/kef/.rvm/scripts/rvm ; fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+[[ -r $rvm_path/scripts/completion ]] && source $rvm_path/scripts/completion
