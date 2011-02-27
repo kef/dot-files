@@ -1,8 +1,18 @@
+# Glen Maddern's aliases
+alias gup='git smart-pull'
+alias gm='git smart-merge'
+alias gl='git smart-log'
+
+function git_current_branch() {
+  git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
+}
+
+alias gpthis='git push origin HEAD:$(git_current_branch)'
+
 # Mr Williams Git Compatibility Mode
 
 alias g='git status'
 alias gst='git status'
-alias gl='git pull'
 alias gp='git push'
 alias gpa='git push-all' # see [alias] in ~/.gitconfig
 alias d='git diff | mate'
@@ -38,7 +48,7 @@ alias gi='git init'
 alias ga='git add .'
 alias gac='gca'
 alias gps='gp'
-alias gpl='gl origin master'
+alias gpl='git pulll origin master'
 alias gpo='gp origin master'
 
 alias ignore_empty='find . \( -type d -empty \) -and \( -not -regex ./\.git.* \) -exec touch {}/.gitignore \;'
@@ -59,7 +69,6 @@ alias gsvnup='git svnup'
 alias gsup='git sup'
 alias gsvnci='git svnci'
 alias gsci='git sci'
-alias gup='git up'
 alias gsreb='git sreb'
 alias gsrt='git srt'
 alias gsrebt='git srebt'
@@ -68,3 +77,40 @@ alias gbr='git br'
 alias gunstage='git unstage'
 alias glast='git last'
 alias glg='git lg'
+
+# Ben Hoskings' aliases
+function git-branch-name {
+  git symbolic-ref HEAD | sed 's/.*\///'
+}
+
+concise_logging_format='--pretty=format:%Cblue%h%Creset %cr %Cgreen%an%Creset %s'
+color_ruby_words="--color-words='(:|@|@@|\$)?[a-zA-Z_][a-zA-Z0-9_]*[?!]?'"
+
+alias gits='git status'
+alias gita='git add'
+alias gitau='git add -u'
+alias gitd='git diff'
+alias gitdc='git diff --cached'
+alias gitdw="git diff $color_ruby_words"
+alias gitdcw="git diff --cached $color_ruby_words"
+alias gitd.="git diff --color-words='.'"
+alias gitdc.="git diff --cached --color-words='.'"
+alias gitc='git commit -v'
+alias gitb='git branch -v'
+alias gitl='git log -p'
+alias gitlg='gitl --graph'
+alias gitlc='git log "$concise_logging_format"'
+alias gitlcg='gitlc --graph'
+alias gitlg='git log -p -g'
+alias gitlor_raw='git --no-pager log --graph ORIG_HEAD..HEAD "$concise_logging_format"'
+alias gitlpend_raw='git --no-pager log --graph $(git config branch.`git-branch-name`.remote)/`git-branch-name`..HEAD "$concise_logging_format"'
+alias gitlor='echo -e "commits from ${color_red}ORIG_HEAD${color_none} to ${color_red}HEAD${color_none}" &&
+  gitlor_raw && echo'
+alias gitlpend='echo -e "commits from ${color_red}$(git config branch.`git-branch-name`.remote)/`git-branch-name`${color_none} to ${color_red}HEAD${color_none}" &&
+  gitlpend_raw && echo'
+alias gitlorp='gitlor_raw -p'
+alias gitup='git pull && gitlor && git submodule update'
+alias gitp='gitup && gitlpend && git push'
+alias gitpt='gitp && git push --tags'
+ 
+#alias git-set-remote='echo git config branch.`git-branch-name`.remote "$1" && echo git config branch.`git-branch-name`.merge "refs/heads/$2"'

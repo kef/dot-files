@@ -44,8 +44,7 @@ fi
 . `brew --prefix`/Library/Contributions/brew_bash_completion.sh
 
 . ~/.aliases
-. ~/.gitaliases
-. ~/.ben_h_git_aliases
+. ~/.git_aliases
 
 PS1="\w\$(parse_git_branch) $ "
 
