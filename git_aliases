@@ -1,3 +1,10 @@
+# Mine
+alias gs='git stash'
+alias gsp='git stash pop'
+alias gsl='git stash list'
+alias gss='git stash show'
+alias gsd='git stash drop'
+
 # Glen Maddern's aliases
 alias gup='git smart-pull'
 alias gm='git smart-merge'
@@ -12,7 +19,6 @@ alias gpthis='git push origin HEAD:$(git_current_branch)'
 # Mr Williams Git Compatibility Mode
 
 alias g='git status'
-alias gst='git status'
 alias gp='git push'
 alias gpa='git push-all' # see [alias] in ~/.gitconfig
 alias d='git diff | mate'
@@ -43,12 +49,11 @@ parse_git_branch() {
 # End Mr Williams Compatibility Mode
 
 # Bo's preferred aliases
-alias gs='gst'
 alias gi='git init'
 alias ga='git add .'
 alias gac='gca'
 alias gps='gp'
-alias gpl='git pulll origin master'
+alias gpl='git pull origin master'
 alias gpo='gp origin master'
 
 alias ignore_empty='find . \( -type d -empty \) -and \( -not -regex ./\.git.* \) -exec touch {}/.gitignore \;'
@@ -112,5 +117,5 @@ alias gitlorp='gitlor_raw -p'
 alias gitup='git pull && gitlor && git submodule update'
 alias gitp='gitup && gitlpend && git push'
 alias gitpt='gitp && git push --tags'
- 
+
 #alias git-set-remote='echo git config branch.`git-branch-name`.remote "$1" && echo git config branch.`git-branch-name`.merge "refs/heads/$2"'
