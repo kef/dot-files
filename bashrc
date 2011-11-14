@@ -30,6 +30,7 @@ export PATH
 #export MANPATH="/usr/local/man:$MANPATH"
 export CDPATH=".:$HOME:$SOURCE_DIR:$DOCS_DIR:$SOURCE_DIR/ruby:$SOURCE_DIR/javascript:$SOURCE_DIR/java:$SOURCE_DIR/cocoa"
 
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
 export NODE_PATH="/usr/local/lib/node"
 
 export LC_CTYPE=en_US.UTF-8
@@ -103,3 +104,4 @@ function railsapp {
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 [[ -r $rvm_path/scripts/completion ]] && source $rvm_path/scripts/completion
+cd .
