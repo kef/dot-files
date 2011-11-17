@@ -28,7 +28,16 @@ PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
 export PATH
 
 #export MANPATH="/usr/local/man:$MANPATH"
-export CDPATH=".:$HOME:$SOURCE_DIR:$DOCS_DIR:$SOURCE_DIR/ruby:$SOURCE_DIR/javascript:$SOURCE_DIR/java:$SOURCE_DIR/cocoa"
+CDPATH="."
+CDPATH="$CDPATH:$HOME"
+CDPATH="$CDPATH:$SOURCE_DIR"
+CDPATH="$CDPATH:$DOCS_DIR"
+CDPATH="$CDPATH:$SOURCE_DIR/HIE"
+CDPATH="$CDPATH:$SOURCE_DIR/ruby"
+CDPATH="$CDPATH:$SOURCE_DIR/javascript"
+CDPATH="$CDPATH:$SOURCE_DIR/java"
+CDPATH="$CDPATH:$SOURCE_DIR/cocoa"
+export CDPATH
 
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
 export NODE_PATH="/usr/local/lib/node"
