@@ -42,7 +42,8 @@ export CDPATH
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
 export NODE_PATH="/usr/local/lib/node"
 
-export LC_CTYPE=en_US.UTF-8
+# TODO Why did I set this? Default of en_AU.UTF-8 seems better.
+#export LC_CTYPE=en_US.UTF-8
 
 export IDEA_JDK=$JAVA_HOME
 export RUBYMINE_JDK=$JAVA_HOME
