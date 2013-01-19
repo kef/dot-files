@@ -13,7 +13,7 @@ export GIT_EDITOR='mate -w'
 export VISUAL='mate -w'
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 export ANT_HOME="$SOURCE_DIR/java/apache-ant-1.7.0"
-#export GROOVY_HOME="$SOURCE_DIR/java/groovy-1.0"
+export GROOVY_HOME='/usr/local/Cellar/groovy/1.8.6/libexec'
 export M2_HOME="$SOURCE_DIR/java/apache-maven-2.2.1"
 export ANDROID_HOME="$SOURCE_DIR/java/android-sdk-mac_x86-1.5_r3"
 
@@ -22,7 +22,7 @@ PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 PATH="$PATH:/usr/local/share/npm/bin"
 PATH="$PATH:/usr/local/mysql/bin"
 PATH="$PATH:$ANT_HOME/bin"
-#PATH="$PATH:$GROOVY_HOME/bin"
+PATH="$PATH:$GROOVY_HOME/bin"
 PATH="$PATH:$M2_HOME/bin"
 PATH="$PATH:$SOURCE_DIR/java/ec2-api-tools-1.3-34128/bin"
 #PATH="$PATH:$ANDROID_HOME/tools"
