@@ -14,8 +14,8 @@ export GROOVY_HOME='/usr/local/Cellar/groovy/2.0.5/libexec'
 export M2_HOME="$SOURCE_DIR/java/apache-maven-2.2.1"
 export ANDROID_HOME="$SOURCE_DIR/java/android-sdk-mac_x86-1.5_r3"
 
+PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin'
 PATH="$HOME/Scripts:$PATH"
-PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/usr/local/share/npm/bin"
 PATH="$PATH:/usr/local/mysql/bin"
 PATH="$PATH:$ANT_HOME/bin"
