@@ -52,6 +52,9 @@ export IDEA_JDK=$JAVA_HOME
 export RUBYMINE_JDK=$JAVA_HOME
 export JDK_HOME=$JAVA_HOME
 
+# Define community OID to use when not defined.
+export COMMUNITY_OID='1.2.36.129710685.1.90078'
+
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
