@@ -8,7 +8,7 @@ export ARCHFLAGS='-arch x86_64'
 export EDITOR='mate -w'
 export GIT_EDITOR='mate -w'
 export VISUAL='mate -w'
-export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Home'
 export ANT_HOME="$SOURCE_DIR/java/apache-ant-1.7.0"
 export GROOVY_HOME='/usr/local/Cellar/groovy/1.8.6/libexec'
 export M2_HOME="$SOURCE_DIR/java/apache-maven-2.2.1"
@@ -28,7 +28,7 @@ PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
 export PATH
 
 #export MANPATH="/usr/local/man:$MANPATH"
-CDPATH="."
+CDPATH='.'
 CDPATH="$CDPATH:$HOME"
 CDPATH="$CDPATH:$SOURCE_DIR"
 CDPATH="$CDPATH:$DOCS_DIR"
@@ -40,7 +40,7 @@ CDPATH="$CDPATH:$SOURCE_DIR/cocoa"
 export CDPATH
 
 #export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
-export NODE_PATH="/usr/local/lib/node_modules"
+export NODE_PATH='/usr/local/lib/node_modules'
 
 # TODO Why did I set this? Default of en_AU.UTF-8 seems better.
 #export LC_CTYPE=en_US.UTF-8
@@ -75,9 +75,9 @@ pman() {
 #export PS1='\[\e[00;${COL}m\]\u@\h \w \$\[\e[00m\] '
 
 # readline settings
-#bind "set completion-ignore-case on" 
-#bind "set bell-style none" # No bell, because it's damn annoying
-bind "set show-all-if-ambiguous On" # this allows you to automatically show completion without double-tabbing
+#bind 'set completion-ignore-case on'
+#bind 'set bell-style none' # No bell, because it's damn annoying
+bind 'set show-all-if-ambiguous On' # this allows you to automatically show completion without double-tabbing
 
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
