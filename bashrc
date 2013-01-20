@@ -10,7 +10,7 @@ export GIT_EDITOR='mate -w'
 export VISUAL='mate -w'
 export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Home'
 export ANT_HOME="$SOURCE_DIR/java/apache-ant-1.7.0"
-export GROOVY_HOME='/usr/local/Cellar/groovy/1.8.6/libexec'
+export GROOVY_HOME='/usr/local/Cellar/groovy/2.0.5/libexec'
 export M2_HOME="$SOURCE_DIR/java/apache-maven-2.2.1"
 export ANDROID_HOME="$SOURCE_DIR/java/android-sdk-mac_x86-1.5_r3"
 
