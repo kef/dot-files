@@ -106,6 +106,7 @@ function railsapp {
   rails $appname -m http://github.com/kef/rails-templates/raw/master/$template.rb $@
 }
 
+# TODO This is taking too long.
 #export GEMDIR=`gem env gemdir`
 #
 # gemdoc() {
@@ -116,8 +117,7 @@ function railsapp {
 #   COMPREPLY=($(compgen -W '$(`which ls` $GEMDIR/doc)' -- ${COMP_WORDS[COMP_CWORD]}))
 #   return 0
 # }
-
-# TODO This is taking too long.
+#
 #complete -o default -o nospace -F _gemdocomplete gemdoc
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
