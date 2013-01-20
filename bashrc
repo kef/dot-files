@@ -62,7 +62,10 @@ fi
 . ~/.aliases
 . ~/.git_aliases
 
-PS1="\w\$(parse_git_branch) $ "
+. ~/.osx_defaults
+
+PS1="\[\033[G\]\w\$(parse_git_branch) $ "
+#PS1="\[\033[G\]\u@\h:\[\e[01;34m\]\W\[\e[00m\e[0;32m\]\$(parse_git_branch)\[\e[00m\]$ "
 
 pman() {
   man -t "${1}" | open -f -a /Applications/Preview.app/
