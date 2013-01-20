@@ -1,0 +1,231 @@
+# Configuration.
+config defaultToCurrentScreen true # Default: false
+config nudgePercentOf screenSize # Default: windowSize
+config resizePercentOf screenSize # Default: windowSize
+config repeatOnHoldOps resize,nudge
+config secondsBeforeRepeat 0.4
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true # Default: false
+config focusCheckWidth 100
+config focusCheckWidthMax 3000 # Default: 100
+config focusPreferSameApp true
+config orderScreensLeftToRight true
+config windowHintsBackgroundColor 50;53;58;0.9
+config windowHintsWidth 100
+config windowHintsHeight 100
+config windowHintsFontColor 255;255;255;1.0
+config windowHintsFontName Helvetica
+config windowHintsFontSize 40
+config windowHintsDuration 3
+config windowHintsRoundedCornerSize 5
+config windowHintsIgnoreHiddenWindows false # Default: true
+config windowHintsTopLeftX (windowSizeX/2)-(windowHintsWidth/2);0
+config windowHintsTopLeftY (windowSizeY/2)-(windowHintsHeight/2);0
+config windowHintsOrder lefToRight
+config windowHintsShowIcons true # Default: false
+config windowHintsSpread true # Default: false
+config windowHintsSpreadSearchWidth 40
+config windowHintsSpreadSearchHeight 40
+config windowHintsSpreadPadding 20
+config switchIconSize 100
+config switchIconPadding 5
+config switchBackgroundColor 50;53;58;0.3
+config switchSelectedBackgroundColor 50;53;58;0.9
+config switchSelectedBorderColor 230;230;230;0.9
+config switchSelectedBorderSize 2
+config switchRoundedCornerSize 5
+config switchOrientation horizontal
+config switchSecondsBeforeRepeat 0.4
+config switchSecondsBetweenRepeat 0.05
+config switchStopRepeatAtEdge true
+config switchOnlyFocusMainWindow true
+config switchShowTitles false
+config switchFontColor 255;255;255;1.0
+config switchFontName Helvetica
+config switchFontSize 14
+config switchType app
+config switchSelectedPadding 10
+config keyboardLayout qwerty # Can also be dvorak or colemak.
+config snapshotTitleMatch levenshtein
+config snapshotMaxStackSize 0
+config gridBackgroundColor75;77;81;1.0
+config gridRoundedCornerSize 5
+config gridCellBackgroundColor 75;77;81;1.0
+config gridCellSelectedColor 75;77;81;1.0
+config gridCellRoundedCornerSize 5
+config layoutFocusOnActivate false
+config undoMaxStackSize 10
+config undoOps activate-snapshot,chain,grid,layout,move,resize,sequence,shell
+
+# Monitors.
+alias mon-laptop 1440x900
+alias mon-cinema 1920x1200
+
+# Keyboard Hints.
+alias showHintsLeftHand hint QWERASDZXC
+alias showNormalHint    hint QWERASDZXCUIOPJKLNM
+
+# Applications.
+alias browser 'Safari'
+alias editor 'TextMate'
+alias chat 'Messages'
+
+# Abstract operations.
+alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
+alias lefthalf      move screenOriginX;screenOriginY                  screenSizeX/2;screenSizeY
+alias righthalf     move screenOriginX+screenSizeX/2;screenOriginY    screenSizeX/2;screenSizeY
+alias rightmost     move screenOriginX+screenSizeX*0.4;screenOriginY  screenSizeX*0.6;screenSizeY
+alias rightless     move screenOriginX+screenSizeX*0.6;screenOriginY  screenSizeX*0.4;screenSizeY
+alias leftmost      move screenOriginX;screenOriginY                  screenSizeX*0.6;screenSizeY
+alias leftless      move screenOriginX;screenOriginY                  screenSizeX*0.4;screenSizeY
+
+alias topleft       corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright      corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft    corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright   corner bottom-right resize:screenSizeX/2;screenSizeY/2
+
+# Concrete operations.
+alias 1-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY         ${mon-laptop}
+alias 1-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
+alias 1-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
+alias 2-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-cinema}
+alias 2-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-cinema}
+alias 2-righttop    move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2       ${mon-cinema}
+alias 2-rightbottom move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2    screenSizeX/2;screenSizeY/2       ${mon-cinema}
+
+# One monitor layout.
+layout 1monitor 'Terminal':MAIN_FIRST  ${1-right}
+layout 1monitor ${editor}:MAIN_FIRST   ${1-left}
+layout 1monitor ${browser}:REPEAT      ${1-full}
+layout 1monitor 'Mail':MAIN_FIRST      ${1-full}
+layout 1monitor 'Finder':MAIN_FIRST    ${1-full}
+layout 1monitor 'RubyMine':REPEAT      ${1-full}
+layout 1monitor 'iTunes':REPEAT        ${1-full}
+
+# Two monitor layout.
+layout 2monitors 'Terminal':MAIN_FIRST ${2-rightbottom} | ${1-left}
+layout 2monitors ${editor}:REPEAT      ${1-full}
+layout 2monitors ${browser}:REPEAT     ${1-full}
+layout 2monitors 'Mail':MAIN_FIRST     ${2-left}
+layout 2monitors 'Finder':MAIN_FIRST   ${2-righttop}
+layout 2monitors 'RubyMine':REPEAT     ${1-full}
+layout 2monitors 'iTunes':REPEAT       ${1-full}
+
+# Default layouts.
+default 1monitor count:1
+default 2monitors count:2
+
+# Numeric keypad location bindings.
+bind pad0 ${showHintsLeftHand}
+bind pad1 ${leftless}
+bind pad2 push bottom bar-resize:screenSizeY/2
+bind pad3 ${rightless}
+bind pad4 ${lefthalf}
+bind pad5 ${full}
+bind pad6 ${righthalf}
+bind pad7 ${leftmost}
+bind pad8 push top bar-resize:screenSizeY/2
+bind pad9 ${rightmost}
+bind padEnter grid padding:5 ${mon-laptop}:6,2 ${mon-cinema}:8,3
+bind pad+ throw next
+bind pad. focus behind
+bind pad* layout 2monitors
+bind pad/ layout 1monitor
+
+# TODO Consider setting up hyper as a modal key instead of a modifier key.
+alias hyper ctrl;shift;alt;cmd
+
+bind a:${hyper} ${showNormalHint}
+
+# Location bindings
+#bind t:${hyper} ${lefthalf}
+bind n:${hyper} ${full}
+#bind s:${hyper} ${righthalf}
+#bind r:${hyper} throw next
+
+# Resize Bindings
+#bind r:${hyper} ${leftmost}
+#bind g:${hyper} ${rightmost}
+
+# Focus Bindings
+bind right:${hyper}    focus right
+bind left:${hyper}     focus left
+bind up:${hyper}       focus up
+bind down:${hyper}     focus down
+
+# Some examples of chaining multiple sequential actions by repeated use of the same key.
+#bind up:${hyper} push up bar-resize:screenSizeY
+#bind 1:ctrl chain push up | push right | push down | push left
+#bind up:${hyper} chain push up bar-resize:screenSizeY | throw next | push up bar-resize:screenSizeY
+#defaultToCurrentScreen true
+#bind k:ctrl;alt;cmd chain ${1-full} | ${2-full}
+
+# App bindings
+bind b:${hyper} focus ${browser}
+bind e:${hyper} focus ${editor}
+#bind g:${hyper} focus 'GitHub'
+bind g:${hyper} focus 'Things'
+bind m:${hyper} focus 'Mail'
+bind t:${hyper} focus 'Terminal'
+bind f:${hyper} focus 'Finder'
+bind w:${hyper} focus 'Tweetbot'
+bind i:${hyper} focus 'iTunes'
+bind s:${hyper} focus 'Skype'
+bind c:${hyper} focus ${chat}
+
+#bind p:${hyper} already mapped to Play/Pause consumer key in KeyRemap4MacBook private.xml configuration file.
+
+bind z:${hyper} undo
+
+# TODO Understand how the Slate switcher works.
+#bind tab:cmd switch
+#bind tab:shift;cmd switch
+
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+#config defaultToCurrentScreen true
+#config nudgePercentOf screenSize
+#config resizePercentOf screenSize
+
+# Resize Bindings
+#bind right:alt       resize +10% +0
+#bind left:alt        resize -10% +0
+#bind up:alt          resize +0   -10%
+#bind down:alt        resize +0   +10%
+#bind right:ctrl;alt  resize -10% +0 bottom-right
+#bind left:ctrl;alt   resize +10% +0 bottom-right
+#bind up:ctrl;alt     resize +0   +10% bottom-right
+#bind down:ctrl;alt   resize +0   -10% bottom-right
+
+# Push Bindings
+#bind right:ctrl;cmd  push right bar-resize:screenSizeX/3
+#bind left:ctrl;cmd   push left  bar-resize:screenSizeX/3
+#bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
+#bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+
+# Nudge Bindings
+#bind right:shift;alt nudge +10% +0
+#bind left:shift;alt  nudge -10% +0
+#bind up:shift;alt    nudge +0   -10%
+#bind down:shift;alt  nudge +0   +10%
+
+# Throw Bindings
+#bind 1:ctrl;alt         throw 0 resize
+#bind 2:ctrl;alt         throw 1 resize
+#bind 3:ctrl;alt         throw 2 resize
+#bind right:ctrl;alt;cmd throw right resize
+#bind left:ctrl;alt;cmd  throw left  resize
+#bind up:ctrl;alt;cmd    throw up    resize
+#bind down:ctrl;alt;cmd  throw down  resize
+
+# Focus Bindings
+#bind right:cmd    focus right
+#bind left:cmd     focus left
+#bind up:cmd       focus up
+#bind down:cmd     focus down
+#bind up:cmd;alt   focus behind
+#bind down:cmd;alt focus behind
+
+# Window Hints
+#bind esc:cmd hint
