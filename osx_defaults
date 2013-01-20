@@ -1,0 +1,7 @@
+#sudo pmset -a hibernatemode 0
+#sudo rm -rf /var/vm/sleepimage
+
+# Turn off Time Machine local snapshots.
+#sudo tmutil disablelocal
+
+defaults -currentHost write -globalDomain AppleFontSmoothing -int 2
