@@ -3,9 +3,6 @@ SOURCE_DIR="$HOME/Source"
 
 CURRENT_PROJECT_DIR="$SOURCE_DIR/ccca"
 
-export CC=gcc-4.2
-export CXX=g++-4.2
-
 export DISPLAY=:0.0
 export ARCHFLAGS='-arch x86_64'
 export EDITOR='mate -w'
