@@ -14,8 +14,8 @@ export GROOVY_HOME='/usr/local/Cellar/groovy/2.0.5/libexec'
 export M2_HOME="$SOURCE_DIR/java/apache-maven-2.2.1"
 export ANDROID_HOME="$SOURCE_DIR/java/android-sdk-mac_x86-1.5_r3"
 
-PATH="$HOME/Scripts"
-PATH="$PATH:/usr/local/bin:/usr/local/sbin"
+PATH="$HOME/Scripts:$PATH"
+PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/usr/local/share/npm/bin"
 PATH="$PATH:/usr/local/mysql/bin"
 PATH="$PATH:$ANT_HOME/bin"
@@ -24,7 +24,7 @@ PATH="$PATH:$M2_HOME/bin"
 PATH="$PATH:$SOURCE_DIR/java/ec2-api-tools-1.3-34128/bin"
 #PATH="$PATH:$ANDROID_HOME/tools"
 PATH="$PATH:$HOME/Scripts/wireshark"
-PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+PATH="$PATH:/usr/X11/bin"
 export PATH
 
 #export MANPATH="/usr/local/man:$MANPATH"
@@ -121,5 +121,3 @@ function railsapp {
 #complete -o default -o nospace -F _gemdocomplete gemdoc
 
 [[ -r $rvm_path/scripts/completion ]] && source $rvm_path/scripts/completion
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
