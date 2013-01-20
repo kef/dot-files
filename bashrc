@@ -52,6 +52,9 @@ export JDK_HOME=$JAVA_HOME
 # Define community OID to use when not defined.
 export COMMUNITY_OID='1.2.36.129710685.1.90078'
 
+# Local development mode for HIE projects.
+export LOCAL_DEV='ooh yeah'
+
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
