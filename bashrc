@@ -50,6 +50,9 @@ export IDEA_JDK=$JAVA_HOME
 export RUBYMINE_JDK=$JAVA_HOME
 export JDK_HOME=$JAVA_HOME
 
+# Required for rvm build of Ruby 1.8.7 to find XQuartz include files.
+export CPPFLAGS=-I/opt/X11/include
+
 # Define community OID to use when not defined.
 export COMMUNITY_OID='1.2.36.129710685.1.90078'
 
