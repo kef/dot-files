@@ -84,32 +84,35 @@ alias topright      corner top-right resize:screenSizeX/2;screenSizeY/2
 alias bottomleft    corner bottom-left resize:screenSizeX/2;screenSizeY/2
 alias bottomright   corner bottom-right resize:screenSizeX/2;screenSizeY/2
 
+alias righttop      move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
+alias rightbottom   move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2    screenSizeX/2;screenSizeY/2
+
 # Concrete operations.
-alias 1-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY         ${mon-laptop}
-alias 1-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
-alias 1-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
-alias 2-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-cinema}
-alias 2-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-cinema}
-alias 2-righttop    move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2       ${mon-cinema}
-alias 2-rightbottom move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2    screenSizeX/2;screenSizeY/2       ${mon-cinema}
+alias laptop-full        ${full}        ${mon-laptop}
+alias laptop-left        ${lefthalf}    ${mon-laptop}
+alias laptop-right       ${righthalf}   ${mon-laptop}
+alias cinema-left        ${lefthalf}    ${mon-cinema}
+alias cinema-right       ${righthalf}   ${mon-cinema}
+alias cinema-righttop    ${righttop}    ${mon-cinema}
+alias cinema-rightbottom ${rightbottom} ${mon-cinema}
 
 # One monitor layout.
-layout 1monitor 'Terminal':MAIN_FIRST  ${1-right}
-layout 1monitor ${editor}:MAIN_FIRST   ${1-left}
-layout 1monitor ${browser}:REPEAT      ${1-full}
-layout 1monitor 'Mail':MAIN_FIRST      ${1-full}
-layout 1monitor 'Finder':MAIN_FIRST    ${1-full}
-layout 1monitor 'RubyMine':REPEAT      ${1-full}
-layout 1monitor 'iTunes':REPEAT        ${1-full}
+layout 1monitor 'Terminal':MAIN_FIRST  ${laptop-right}
+layout 1monitor ${editor}:MAIN_FIRST   ${laptop-left}
+layout 1monitor ${browser}:REPEAT      ${laptop-full}
+layout 1monitor 'Mail':MAIN_FIRST      ${laptop-full}
+layout 1monitor 'Finder':MAIN_FIRST    ${laptop-full}
+layout 1monitor 'RubyMine':REPEAT      ${laptop-full}
+layout 1monitor 'iTunes':REPEAT        ${laptop-full}
 
 # Two monitor layout.
-layout 2monitors 'Terminal':MAIN_FIRST ${2-rightbottom} | ${1-left}
-layout 2monitors ${editor}:REPEAT      ${1-full}
-layout 2monitors ${browser}:REPEAT     ${1-full}
-layout 2monitors 'Mail':MAIN_FIRST     ${2-left}
-layout 2monitors 'Finder':MAIN_FIRST   ${2-righttop}
-layout 2monitors 'RubyMine':REPEAT     ${1-full}
-layout 2monitors 'iTunes':REPEAT       ${1-full}
+layout 2monitors 'Terminal':MAIN_FIRST ${cinema-rightbottom} | ${laptop-left}
+layout 2monitors ${editor}:REPEAT      ${laptop-full}
+layout 2monitors ${browser}:REPEAT     ${laptop-full}
+layout 2monitors 'Mail':MAIN_FIRST     ${cinema-left}
+layout 2monitors 'Finder':MAIN_FIRST   ${cinema-righttop}
+layout 2monitors 'RubyMine':REPEAT     ${laptop-full}
+layout 2monitors 'iTunes':REPEAT       ${laptop-full}
 
 # Default layouts.
 default 1monitor count:1
