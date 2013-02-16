@@ -125,3 +125,5 @@ function railsapp {
 #complete -o default -o nospace -F _gemdocomplete gemdoc
 
 [[ -r $rvm_path/scripts/completion ]] && source $rvm_path/scripts/completion
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
