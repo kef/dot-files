@@ -175,6 +175,7 @@ bind w:${hyper} focus 'Tweetbot'
 bind i:${hyper} focus 'iTunes'
 bind s:${hyper} focus 'Skype'
 bind c:${hyper} focus ${chat}
+bind l:${hyper} focus 'Calendar'
 
 #bind p:${hyper} already mapped to Play/Pause consumer key in KeyRemap4MacBook private.xml configuration file.
 
@@ -183,6 +184,8 @@ bind z:${hyper} undo
 # TODO Understand how the Slate switcher works.
 #bind tab:cmd switch
 #bind tab:shift;cmd switch
+
+
 
 # This is the default .slate file.
 # If no ~/.slate file exists this is the file that will be used.
