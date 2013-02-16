@@ -138,11 +138,15 @@ bind pad/ layout 1monitor
 # TODO Consider setting up hyper as a modal key instead of a modifier key.
 alias hyper ctrl;shift;alt;cmd
 
+bind 4:${hyper} ${lefthalf}
+bind 5:${hyper} ${righthalf}
+bind 6:${hyper} ${full}
+
 bind a:${hyper} ${showNormalHint}
 
 # Location bindings
 #bind t:${hyper} ${lefthalf}
-bind n:${hyper} ${full}
+#bind n:${hyper} ${full}
 #bind s:${hyper} ${righthalf}
 #bind r:${hyper} throw next
 
