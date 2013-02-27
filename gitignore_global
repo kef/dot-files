@@ -1,6 +1,10 @@
+# Mac OS X droppings.
 .DS_Store
+
+# RubyMine configuration files that are awkward to share between developers.
 workspace.xml
 .rakeTasks
+.generators
 .name
 *.iml
 modules.xml
