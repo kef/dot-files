@@ -8,3 +8,4 @@ workspace.xml
 .name
 *.iml
 modules.xml
+dataSources.ids
