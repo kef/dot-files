@@ -17,6 +17,7 @@ export ANDROID_HOME="$SOURCE_DIR/java/android-sdk-mac_x86-1.5_r3"
 PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin'
 PATH="$HOME/Scripts:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
+PATH="/Library/Java/JavaVirtualMachines/jdk1.7.0_13.jdk/Contents/Home/bin:$PATH"
 PATH="$PATH:/usr/local/share/npm/bin"
 PATH="$PATH:/usr/local/mysql/bin"
 PATH="$PATH:$ANT_HOME/bin"
@@ -46,6 +47,7 @@ export NODE_PATH='/usr/local/lib/node_modules'
 # TODO Why did I set this? Default of en_AU.UTF-8 seems better.
 #export LC_CTYPE=en_US.UTF-8
 
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_13.jdk/Contents/Home
 export IDEA_JDK=$JAVA_HOME
 export RUBYMINE_JDK=$JAVA_HOME
 export JDK_HOME=$JAVA_HOME
