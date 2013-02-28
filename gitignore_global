@@ -9,3 +9,4 @@ workspace.xml
 *.iml
 modules.xml
 dataSources.ids
+dataSources.xml
