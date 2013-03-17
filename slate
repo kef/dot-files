@@ -104,15 +104,27 @@ layout 1monitor 'Mail':MAIN_FIRST      ${laptop-full}
 layout 1monitor 'Finder':MAIN_FIRST    ${laptop-full}
 layout 1monitor 'RubyMine':REPEAT      ${laptop-full}
 layout 1monitor 'iTunes':REPEAT        ${laptop-full}
+layout 1monitor 'Calendar':REPEAT      ${laptop-full}
+layout 1monitor '${chat}':REPEAT       ${laptop-left}
+layout 1monitor 'Tweetbot':REPEAT      ${laptop-left}
+layout 1monitor 'Skype':REPEAT         ${laptop-right}
+layout 1monitor 'Things':REPEAT        ${laptop-right}
+layout 1monitor 'Evernote':REPEAT      ${laptop-full}
 
 # Two monitor layout.
-layout 2monitors 'Terminal':MAIN_FIRST ${cinema-rightbottom} | ${laptop-left}
-layout 2monitors ${editor}:REPEAT      ${laptop-full}
-layout 2monitors ${browser}:REPEAT     ${laptop-full}
-layout 2monitors 'Mail':MAIN_FIRST     ${cinema-left}
+layout 2monitors 'Terminal':MAIN_FIRST ${cinema-right} | ${laptop-left}
+layout 2monitors ${editor}:REPEAT      ${cinema-left}
+layout 2monitors ${browser}:REPEAT     ${cinema-right}
+layout 2monitors 'Mail':MAIN_FIRST     ${cinema-full}
 layout 2monitors 'Finder':MAIN_FIRST   ${cinema-righttop}
-layout 2monitors 'RubyMine':REPEAT     ${laptop-full}
+layout 2monitors 'RubyMine':REPEAT     ${cinema-full}
 layout 2monitors 'iTunes':REPEAT       ${laptop-full}
+layout 2monitors 'Calendar':REPEAT     ${laptop-full}
+layout 2monitors '${chat}':REPEAT      ${cinema-left}
+layout 2monitors 'Tweetbot':REPEAT     ${cinema-left}
+layout 2monitors 'Skype':REPEAT        ${cinema-right}
+layout 2monitors 'Things':REPEAT       ${cinema-right}
+layout 2monitors 'Evernote':REPEAT     ${cinema-full}
 
 # Default layouts.
 default 1monitor count:1
