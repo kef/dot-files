@@ -91,6 +91,7 @@ alias rightbottom   move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2
 alias laptop-full        ${full}        ${mon-laptop}
 alias laptop-left        ${lefthalf}    ${mon-laptop}
 alias laptop-right       ${righthalf}   ${mon-laptop}
+alias cinema-full        ${full}        ${mon-cinema}
 alias cinema-left        ${lefthalf}    ${mon-cinema}
 alias cinema-right       ${righthalf}   ${mon-cinema}
 alias cinema-righttop    ${righttop}    ${mon-cinema}
