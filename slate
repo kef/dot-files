@@ -152,8 +152,9 @@ bind pad/ layout 1monitor
 alias hyper ctrl;shift;alt;cmd
 
 bind 4:${hyper} ${lefthalf}
-bind 5:${hyper} ${righthalf}
-bind 6:${hyper} ${full}
+bind 5:${hyper} ${full}
+bind 6:${hyper} ${righthalf}
+bind =:${hyper} throw next
 
 bind a:${hyper} ${showNormalHint}
 
